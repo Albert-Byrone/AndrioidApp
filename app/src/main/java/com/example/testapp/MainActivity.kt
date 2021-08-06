@@ -3,6 +3,7 @@ package com.example.testapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -10,10 +11,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var click_btn = findViewById(R.id.button) as Button
+        val clickBtn = findViewById(R.id.button) as Button
 
-        click_btn.setOnClickListener{
-            Toast.makeText(this@MainActivity, "Clicked", Toast.LENGTH_SHORT).show()
+        val myTextView = findViewById(R.id.textView) as TextView
+
+        var timesClicked = 0
+
+        clickBtn.setOnClickListener{
+            timesClicked += 1
+            myTextView.text = timesClicked.toString()
+            Toast.makeText(this@MainActivity, "Clicked me", Toast.LENGTH_SHORT).show()
         }
     }
 }
+
+
+//button.setOnClickListener{
+//    timesClicked =+ 1
+//    textView.text = timesClicked.toString()
+//    Toast.makeText(this@MainActivity, "Clicked me", Toast.LENGTH_SHORT).show()
+//}
