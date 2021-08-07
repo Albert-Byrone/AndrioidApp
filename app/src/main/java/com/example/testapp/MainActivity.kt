@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val clickBtn = findViewById(R.id.button) as Button
+        val clickBtn = findViewById<Button>(R.id.button)
 
-        val myTextView = findViewById(R.id.textView) as TextView
+        val myTextView = findViewById<TextView>(R.id.textView)
 
         var timesClicked = 0
 
